@@ -1,25 +1,27 @@
-require 'csv'
 require 'goliath'
 require 'pry'
 
+require './lib/metrics_manager'
 require './lib/metric'
 
 class MetricsApi < Goliath::API
 
+  CSV = 'metrics.csv'
+
   def initialize
-    @metrics = []
-    CSV.foreach('metrics.csv', headers: true) do |row|
-     @metrics <<  Metric.new(metric_id:           row['metric_id'],
-                             start_date:          row['start_date'],
-                             time_range_length:   row['time_range_length'],
-                             value:               row['value'],
-                             last_calculated_at:  row['last_calculated_at'],
-                             end_date:            row['end_date'])
-    end
+    @metrics_manager = MetricsManager.new(CSV)
   end
 
   def response(env)
-    [200, {}, 'response']
+    case env['PATH_INFO']
+    when "/metrics.json"
+      case env['REQUEST_METHOD']
+      when 'GET'
+        [200, {}, @metrics_manager.get(env['QUERY_STRING'])]
+      end
+    else
+      [404, {}, nil]
+    end
   end
 
 end
