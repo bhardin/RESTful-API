@@ -1,4 +1,5 @@
 require 'goliath'
+require 'em-synchrony'
 require 'pry'
 
 require './lib/metrics_manager'
