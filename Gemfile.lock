@@ -24,6 +24,7 @@ GEM
     http_parser.rb (0.6.0)
     log4r (1.1.10)
     method_source (0.8.2)
+    minitest (4.7.5)
     multi_json (1.10.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -43,4 +44,5 @@ PLATFORMS
 DEPENDENCIES
   em-synchrony
   goliath
+  minitest
   pry

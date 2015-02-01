@@ -1,3 +1,4 @@
-gem 'goliath'
-gem 'pry'
 gem 'em-synchrony'
+gem 'goliath'
+gem 'minitest'
+gem 'pry'
