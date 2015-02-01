@@ -19,8 +19,15 @@ class MetricsManager
   end
 
   def get(query_string)
-    # hashed_query = CGI::parse(query_string)
     @results = @metrics
+
+    if !query_string.empty?
+
+      hashed_query = CGI::parse(query_string)
+
+
+    end
+
     @results.map { |r| r.to_hash }.to_json
 
   end
