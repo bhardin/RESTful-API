@@ -1,1 +1,2 @@
 gem 'goliath'
+gem 'pry'
