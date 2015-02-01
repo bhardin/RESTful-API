@@ -1,4 +1,5 @@
 gem 'em-synchrony'
+gem 'factory_girl'
 gem 'goliath'
 gem 'minitest'
 gem 'pry'
