@@ -2,6 +2,8 @@
 
 ## Usage
 
+To run locally, `bundle install` and then `bundle exec ruby metrics_api.rb -sv`
+
 ### GET
 
 Get takes several arguments in the form for URI params:
