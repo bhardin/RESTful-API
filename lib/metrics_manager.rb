@@ -19,16 +19,29 @@ class MetricsManager
   end
 
   def get(query_string)
-    @results = @metrics
+    @result = @metrics
 
     if !query_string.empty?
-
       hashed_query = CGI::parse(query_string)
 
+      if hashed_query.keys.include?("metric_id")
+        @result.delete_if { |m| m.metric_id != hashed_query["metric_id"].first.to_i }
+      end
 
+      if hashed_query.keys.include?("before_date")
+        @result.delete_if { |m| m.start_date > Date.parse(hashed_query["before_date"].first) }
+      end
+
+      if hashed_query.keys.include?("after_date")
+        @result.delete_if { |m| m.end_date < Date.parse(hashed_query["after_date"].first) }
+      end
+
+      if hashed_query.keys.include?("value")
+        @result.delete_if { |m| m.value != hashed_query["value"].first }
+      end
     end
 
-    @results.map { |r| r.to_hash }.to_json
+    @result.map { |r| r.to_hash }.to_json
 
   end
 end
