@@ -2,7 +2,7 @@
 
 ## Usage
 
-To run locally, `bundle install` and then `bundle exec ruby metrics_api.rb -sv`
+To run locally, `bundle install` and then `bundle exec ruby metrics_api.rb -sv`.  The API will be available at `localhost:9000`.
 
 ### GET
 
