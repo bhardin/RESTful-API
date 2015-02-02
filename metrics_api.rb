@@ -19,6 +19,8 @@ class MetricsApi < Goliath::API
       case env['REQUEST_METHOD']
       when 'GET'
         [200, {}, @metrics_manager.get(env['QUERY_STRING'])]
+      when 'POST'
+        @metrics_manager.post(env['rack.input'].string)
       end
     else
       [404, {}, nil]

@@ -34,4 +34,22 @@ class Metric
      end_date:            end_date.to_s}
   end
 
+  # Constructer(s)
+
+  def self.from_json(json)
+    # This needs some guard statements.
+
+    hash = JSON.parse(json)
+    new(metric_id:          hash["metric_id"],
+        start_date:         hash['start_date'],
+        time_range_length:  hash['time_range_length'],
+        value:              hash['value'],
+        last_calculated_at: hash['last_calculated_at'],
+        end_date:           hash['end_date'])
+  end
+
+  def to_json
+    to_hash.to_json
+  end
+
 end
