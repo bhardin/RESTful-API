@@ -4,6 +4,8 @@
 
 To run locally, `bundle install` and then `bundle exec ruby metrics_api.rb -sv`.  The API will be available at `localhost:9000`.
 
+To run the tests, run `bundle exec rake test`.
+
 ### GET
 
 Get takes several arguments in the form for URI params:
