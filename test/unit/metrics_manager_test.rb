@@ -74,11 +74,24 @@ describe MetricsManager do
 
   describe "post" do
     it "should created at new metric with the correct values" do
-      response = JSON.parse
+      post_request = {  metric_id:          1,
+                        start_date:         2,
+                        time_range_length:  3,
+                        value:              4,
+                        last_calculated_at: 5,
+                        end_date:           6 }.to_json
 
+      response = @manager.post(post_request)
 
+      assert_equal 201, response[0]
+      assert_equal Hash.new, response[1]
 
-
+      json = JSON.parse(response[2])
+      assert_equal 1, json['metric_id']
+      assert_equal 4, json['value']
+      assert_equal 3, json['time_range_length']
+      assert_equal "2009-01-03", json['start_date']
+      assert_equal "2009-01-07", json['end_date']
     end
   end
 

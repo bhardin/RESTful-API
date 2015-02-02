@@ -28,7 +28,7 @@ class Metric
   def to_hash
     {metric_id:           @metric_id,
      start_date:          start_date.to_s,
-     time_length_range:   @time_range_length,
+     time_range_length:   @time_range_length,
      value:               @value,
      last_calculated_at:  last_calculated_at,
      end_date:            end_date.to_s}
