@@ -27,3 +27,32 @@ __Examples:__
 	- "Number of people purchased something after signing up" is metric 100.
 
 	`/metrics.json?metric_id=100&after_date=2012-02-28&before_date=2012-04-01`
+
+
+### POST
+
+Post takes JSON:
+
+```
+{
+  "metric_id" : "1",
+  "start_date" : "1",
+  "time_range_length" : "1", 
+  "value" : "1",
+  "last_calculated_at" : "1",
+  "end_date" : "1"
+}
+```
+
+and upon successful creation of a Metric will return the metric:
+
+```
+{
+    "metric_id": 1,
+    "start_date": "2009-01-02",
+    "time_range_length": 1,
+    "value": "1",
+    "last_calculated_at": "1969-12-31T16:00:01-08:00",
+    "end_date": "2009-01-02"
+}
+```
