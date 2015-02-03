@@ -1,5 +1,10 @@
 gem 'em-synchrony'
-gem 'factory_girl'
 gem 'goliath'
-gem 'minitest'
-gem 'pry'
+
+group :test, :development  do
+  gem 'pry'
+end
+
+group :test do
+  gem 'minitest'
+end
