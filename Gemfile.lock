@@ -4,6 +4,7 @@ GEM
     async-rack (0.5.1)
       rack (~> 1.1)
     coderay (1.1.0)
+    docile (1.1.5)
     em-synchrony (1.0.4)
       eventmachine (>= 1.0.0.beta.1)
     em-websocket (0.3.8)
@@ -36,6 +37,11 @@ GEM
       rack (>= 0.9.1)
     rack-respond_to (0.9.8)
       rack-accept-media-types (>= 0.6)
+    simplecov (0.9.1)
+      docile (~> 1.1.0)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.8.0)
+    simplecov-html (0.8.0)
     slop (3.6.0)
 
 PLATFORMS
@@ -46,3 +52,4 @@ DEPENDENCIES
   goliath
   minitest
   pry
+  simplecov

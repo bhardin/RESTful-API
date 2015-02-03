@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 require 'bundler'
 require "minitest/autorun"
 require 'em-synchrony'
