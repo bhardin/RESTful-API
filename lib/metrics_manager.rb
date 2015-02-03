@@ -45,7 +45,6 @@ class MetricsManager
   end
 
   def post(json)
-    @metrics <<
     m = Metric.from_json(json)
     @metrics << m
     [201, {}, m.to_json]
